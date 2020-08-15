@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+# Use Carrierwave for easy uploading and Cloudinary for cloud storage
+gem 'carrierwave'
+gem 'cloudinary'
 # Use Hirb to print your SQL output efficiently
 gem 'hirb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
