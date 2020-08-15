@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
+# Use Figaro to define your environment variables
+gem "figaro"
 # Use Carrierwave for easy uploading and Cloudinary for cloud storage
 gem 'carrierwave'
 gem 'cloudinary'

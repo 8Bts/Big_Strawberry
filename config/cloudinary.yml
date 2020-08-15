@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: strawberry-cloud
+  api_key: '537585132569355'
+  api_secret: N7ul2WmfS_KcCQStElL6OdJ-5Vc
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: strawberry-cloud
+  api_key: '537585132569355'
+  api_secret: N7ul2WmfS_KcCQStElL6OdJ-5Vc
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: strawberry-cloud
+  api_key: '537585132569355'
+  api_secret: N7ul2WmfS_KcCQStElL6OdJ-5Vc
+  enhance_image_tag: true
+  static_file_support: false
