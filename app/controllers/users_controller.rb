@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+ 
   def show
     @user = User.find(params[:id])
     @past = @user.attended_events.past
