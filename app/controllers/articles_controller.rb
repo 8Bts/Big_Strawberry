@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = User.find(session[:current_user]).articles.build(article_params)
 
     respond_to do |format|
       if @article.save
@@ -63,11 +63,11 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_variables
       @article = Article.find(params[:id])
-      # @user = User.find(session[:current_user])
+      @user = User.find(session[:current_user])
     end
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:author_id, :title, :text, :image)
+      params.require(:article).permit(:title, :text, :image)
     end
 end

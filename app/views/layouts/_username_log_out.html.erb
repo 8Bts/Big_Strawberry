@@ -1,0 +1,4 @@
+<div class='d-flex align-items-center'>
+    <%= link_to User.find(session[:current_user]).name, user_path(session[:current_user]), class: 'text-dark' %>
+    <%= link_to "Sign out", session_path(session[:current_user]), :method => :delete, class: 'nav-item nav-link' %>
+</div>

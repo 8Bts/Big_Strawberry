@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user
       session[:current_user] = user.id
-      redirect_to events_path
+      redirect_to articles_path
     else
       flash[:alert] = 'There is no user with that name'
       render :new
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:current_user] = nil
-    redirect_to events_path
+    redirect_to articles_path
   end
 end
