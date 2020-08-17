@@ -7,25 +7,40 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/e2597287a1.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-      <%= link_to "Home", articles_path, class: 'navbar-brand' %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav w-100 d-flex justify-content-end">
-          <a class="nav-item nav-link active" href="#"> <span class="sr-only">(current)</span></a>
-          <%= auth_links %>
-        </div>
+    <nav class="navbar navbar-expand navbar-light bg-white d-flex justify-content-between">
+      <div class="logo-nav">
+      	<a href= <%= root_path %> class="nav-link">
+          <span class="logo-text text-orange">
+          BigStrawberry
+          </span>
+        </a>
       </div>
+
+      <div class="nav-middle">
+        <% Category.all.each do |category| %>
+          <%= link_to category.name, category_path(category.id), class: 'font-red-rose nav-middle-link' %>
+        <% end %>
+      </div>
+      
+      <div class="navbar-nav d-flex justify-content-end">
+        <a class="nav-item nav-link active" href="#"> <span class="sr-only">(current)</span></a>
+        <%= auth_links %>
+      </div>
+      
     </nav>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div class="container text-center">
-    <%= yield %>
-  </div>
+
+    <main>
+      <div class="">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer>
+    
+    </footer>
   </body>
 </html>

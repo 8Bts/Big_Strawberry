@@ -1,4 +1,4 @@
-<div class='d-flex align-items-center'>
+<div class='d-flex align-items-center font-chivo'>
     <%= link_to User.find(session[:current_user]).name, user_path(session[:current_user]), class: 'text-dark' %>
-    <%= link_to "Sign out", session_path(session[:current_user]), :method => :delete, class: 'nav-item nav-link' %>
+    <%= link_to "SIGN OUT", session_path(session[:current_user]), :method => :delete, class: 'nav-link font-lato' %>
 </div>

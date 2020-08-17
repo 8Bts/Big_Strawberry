@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Lato:wght@400;700&family=Red+Rose:wght@400;700&display=swap');
+
+$primary: rgb(236, 75, 26);
+
+a { 
+  color: rgba(0, 0, 0, 0.589);;
+  &:hover { 
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.text-orange { color: $primary}
+
+.font-red-rose { font-family: 'Red Rose', cursive; }
+
+.font-lato { font-family: 'Lato', sans-serif; }
+
+.font-chivo { font-family: 'Chivo', sans-serif; }
+
+.logo-text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-middle-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0.5em;
+  transition: color 160ms;
+  &:hover {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 54vh 33vh;
+}
+
+.featured {
+  grid-column: span 5;
+  background-size: cover !important;
+}
+
+.category {
+  background-color: brown;
+}
+
