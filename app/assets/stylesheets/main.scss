@@ -11,6 +11,11 @@ a {
   }
 }
 
+.page-container {
+  min-height: 100vh;
+  position: relative;
+}
+
 .text-orange { color: $primary}
 
 .font-red-rose { font-family: 'Red Rose', cursive; }
@@ -35,6 +40,8 @@ a {
     color: $primary;
   }
 }
+
+main { padding-bottom: 3.2em; }
 
 .main-grid {
   display: grid;
@@ -64,17 +71,9 @@ a {
 }
 
 .category {
-  background-size: 250px !important;
   position: relative;
-  overflow: hidden;
 }
 
-.category-img {
-  width: 100%;
-  position: absolute;
-  transform: translateY(-20%) scale(1);
-  z-index: 1;
-}
 
 .category-link {
   width: 100%;
@@ -99,6 +98,12 @@ a {
   bottom: 1em;
   left: 1em;
   z-index: 3;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .footer {

@@ -12,7 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.hidden_field :author_id, value: 1 %>
+    <%= form.label :category_id %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_area :title %>
   </div>

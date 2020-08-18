@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+    attr_accessor :category_id 
+
     mount_uploader :image, ImageUploader
 
     belongs_to :author, class_name: 'User'
@@ -8,7 +10,7 @@ class Article < ApplicationRecord
     has_many :votes
 
     def self.no_articles_img
-      return 'https://res.cloudinary.com/strawberry-cloud/image/upload/v1597742437/calum-lewis-rkT_TG5NKF8-unsplash_kt5pig.png'
+      return 'https://res.cloudinary.com/strawberry-cloud/image/upload/v1597782927/joe-woods-4Zaq5xY5M_c-unsplash_mjekpx.png'
     end  
     
 end
