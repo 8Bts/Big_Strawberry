@@ -7,5 +7,8 @@ class Article < ApplicationRecord
 
     has_many :votes
 
+    def self.no_articles_img
+      return 'https://res.cloudinary.com/strawberry-cloud/image/upload/v1597742437/calum-lewis-rkT_TG5NKF8-unsplash_kt5pig.png'
+    end  
     
 end

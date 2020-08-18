@@ -38,15 +38,65 @@ a {
 .main-grid {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 54vh 33vh;
+  grid-template-rows: 55vh 35vh;
 }
 
 .featured {
+  position: relative;
   grid-column: span 5;
-  background-size: cover !important;
+}
+
+.featured-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.featured-title {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  color: $primary;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .category {
-  background-color: brown;
+  background-size: 250px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-img {
+  width: 100%;
+  position: absolute;
+  transform: translateY(-20%) scale(1);
+  z-index: 1;
+}
+
+.category-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.category-name {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  z-index: 1;
+  font-weight: bold;
+  border-bottom: 2px solid yellow;
+  line-height: 1.3;
+}
+
+.category-last-article {
+  font-weight: bold;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  z-index: 3;
 }
 
