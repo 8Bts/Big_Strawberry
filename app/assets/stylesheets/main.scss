@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&family=Lato:wght@400;700&family=Red+Rose:wght@400;700&display=swap');
 
-$primary: rgb(236, 75, 26);
+$primary: #f86309;
+$secondary: #4e443e;
 
 a { 
   color: rgba(0, 0, 0, 0.589);;
@@ -100,3 +101,10 @@ a {
   z-index: 3;
 }
 
+.footer {
+  background-color: $secondary;
+}
+
+.font-small {
+  font-size: 0.8rem;
+}

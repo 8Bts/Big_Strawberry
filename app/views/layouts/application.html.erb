@@ -40,7 +40,35 @@
     </main>
 
     <footer>
-      <div>Footer</div><br><br>
+
+      <div class="footer d-flex justify-content-between font-lato">
+        <div class="logo-nav">
+      	  <a href= <%= root_path %> class="nav-link">
+            <span class="logo-text text-orange">
+            BigStrawberry
+            </span>
+          </a>
+        </div>
+
+        <div class="footer-mid py-3 font-small">
+          <a href="#" class="text-orange">Privacy Policy  Terms & Conditions</a>
+          <a href="#" class="text-white">Copyright 2020, All Rights Reserved</a>
+        </div>
+
+        <div class="footer-end font-small p-3">
+          <span class="text-white">Connect with us:</span>
+          <a href="#">
+            <i class="fab fa-twitter fa-lg text-orange"></i>
+          </a>
+          <a href="#">
+          <i class="fab fa-instagram fa-lg text-orange"></i>          
+          </a>
+          <a href="#">
+          <i class="fab fa-facebook fa-lg text-orange"></i>
+          </a>
+        </div>
+      </div>
+
     </footer>
   </body>
 </html>
