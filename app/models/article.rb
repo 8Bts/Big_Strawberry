@@ -9,6 +9,8 @@ class Article < ApplicationRecord
 
     has_many :votes
 
+    validates :title, :text, :image, presence: true
+
     def self.no_articles_img
       return 'https://res.cloudinary.com/strawberry-cloud/image/upload/v1597782927/joe-woods-4Zaq5xY5M_c-unsplash_mjekpx.png'
     end  

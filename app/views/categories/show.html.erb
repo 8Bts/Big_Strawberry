@@ -1,0 +1,27 @@
+
+<div class="category-container font-chivo">
+  <% @articles.includes(:votes).order(id: 'DESC').limit(2).find_each do |article| %>
+    
+    <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+    <div class="cat-article-cont">
+      <h2 class="cat-name text-orange"><%= @category.name %></h2>
+      <h3 class="cat-article-name"><%= article.title %></h3>
+      <p class="cat-article-text"><%= article.text %></p>
+      <span><%= votes_text(article.votes.count) %></span>
+      <%= vote_btn(article) %>
+    </div>
+
+  <% end %>
+
+  <% @articles.order(id: 'DESC').limit(2).offset(2).find_each do |article| %>
+    <div class="cat-article-cont ">
+      <h2 class="cat-name text-orange"><%= @category.name %></h2>
+      <h3 class="cat-article-name"><%= article.title %></h3>
+      <p class="cat-article-text"><%= article.text %></p>
+      <span><%= votes_text(article.votes.count) %></span>
+      <%= vote_btn(article) %>
+    </div>
+    <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+    
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
-<div class="text-center">
+<div class="flex-center mt-5 form-group">
   <%= form_for @user do |f| %>
-  Username: <%= f.text_field :name %>
-  <%= f.submit 'Sign Up' %>
+  <%= f.label :name, 'Username', class: 'text-white'%>
+  <%= f.text_field :name, class: 'form-control'%>
+  <button type="submit" class="btn bg-success btn-block mt-2">Sign Up</button>
   <% end %>
 </div>
