@@ -1,27 +1,61 @@
+<% if notice %>
+  <div class="alert alert-success text-center p-1 rounded-0 mb-0">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert">
+      <span aria-hidden="true">×</span>
+      <span class="sr-only">Close</span>
+    </button>
+  </div>
+<% end %>
 
 <div class="category-container font-chivo">
-  <% @articles.includes(:votes).order(id: 'DESC').limit(2).find_each do |article| %>
-    
-    <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
-    <div class="cat-article-cont">
-      <h2 class="cat-name text-orange"><%= @category.name %></h2>
-      <h3 class="cat-article-name"><%= article.title %></h3>
-      <p class="cat-article-text"><%= article.text %></p>
-      <span><%= votes_text(article.votes.count) %></span>
-      <%= vote_btn(article) %>
-    </div>
+  
+  <% _offset = 0 %>
+              
+  <% while _offset < @articles.size %>
 
-  <% end %>
+    <% @articles.includes(:votes).order(id: 'DESC').limit(2).offset(_offset).find_each do |article| %>
+      
+      <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+      
+      <div class="cat-article-cont">
+        <h2 class="cat-name text-orange mr-5"><%= @category.name %></h2>
+        <br>
+        <h3 class="cat-article-name d-inline-block"><%= article.title %></h3>
+        <p class="cat-article-text"><%= article.text %></p>
+        <span><%= votes_text(article.votes.count) %></span>
+        <%= vote_btn(article) %>
+        <span class="article-actions">
+          <%= edit_btn(article) %>
+          <%= delete_btn(article) %>
+        </span>
+      </div>
 
-  <% @articles.order(id: 'DESC').limit(2).offset(2).find_each do |article| %>
-    <div class="cat-article-cont ">
-      <h2 class="cat-name text-orange"><%= @category.name %></h2>
-      <h3 class="cat-article-name"><%= article.title %></h3>
-      <p class="cat-article-text"><%= article.text %></p>
-      <span><%= votes_text(article.votes.count) %></span>
-      <%= vote_btn(article) %>
-    </div>
-    <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
-    
+      <% _offset += 1 %>
+
+    <% end %>
+
+    <% @articles.order(id: 'DESC').limit(2).offset(_offset).find_each do |article| %>
+      <% break if _offset >= @articles.size %>
+      <div class="cat-article-cont ">
+        <h2 class="cat-name text-orange mr-5"><%= @category.name %></h2>
+        <br>
+        <h3 class="cat-article-name d-inline-block"><%= article.title %></h3>
+        
+        <p class="cat-article-text"><%= article.text %></p>
+        <span><%= votes_text(article.votes.count) %></span>
+        <%= vote_btn(article) %>
+        <span class="article-actions">
+          <%= edit_btn(article) %>
+          <%= delete_btn(article) %>
+        </span>
+      </div>
+
+      <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+      
+      <% _offset += 1 %>
+
+    <% end %>
+
   <% end %>
 </div>

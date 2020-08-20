@@ -7,14 +7,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "User with name #{@user.name} successfully created"
-      redirect_to @user
+      redirect_to articles_path
       session[:current_user] = @user.id
     else
       flash[:alert] = "User couldn't be created"
       render :new
     end
   end
- 
+
   def show
     @user = User.find(params[:id])
   end

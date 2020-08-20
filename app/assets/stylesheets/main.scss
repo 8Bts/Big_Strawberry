@@ -52,6 +52,11 @@ a {
   }
 }
 
+.user-name {
+  font-size: 1.2rem;
+  margin-right: 1em;
+}
+
 main { 
   padding-bottom: 3.3em;
 }
@@ -122,12 +127,12 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
   background-color: rgb(255, 251, 238);
 }
 
 .cat-article-cont {
-  padding: 1em
+  padding: 1em;
+  min-height: 285px;
 }
 
 .cat-name {
@@ -140,6 +145,19 @@ main {
 .cat-article-name {
   font-size: 1.15rem;
   font-weight: bold;
+}
+
+.user-show-page {
+  min-height: 100vh;
+}
+
+.user-art-cont {
+  min-height: 180px;
+}
+
+.user-no-recipies {
+  font-size: 1.2rem;
+  margin: 2em 0;
 }
 
 footer {

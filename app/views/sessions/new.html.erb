@@ -1,5 +1,9 @@
+
+
 <div class="flex-center mt-5 form-group">
+
   <%= form_tag('/sessions', method: 'post') do %>
+    <p class="text-danger"><%= flash[:alert] %></p>
     <%= label_tag(:name, "Username", class: 'text-white') %>
     <%= text_field_tag :name, nil, class: "form-control" %>
     <button type="submit" class="btn bg-success btn-block mt-2">Sign In</button>

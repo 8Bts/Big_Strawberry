@@ -2,6 +2,6 @@
     <a href=<%= new_article_path %>>
       <button class="btn btn-success btn-sm mr-5">Add New Recipe</button>
     </a>
-    <span class="user-name"><%= User.find(session[:current_user]).name %></span>
+    <%= link_to User.find(session[:current_user]).name, user_path(session[:current_user]), class: 'user-name' %>
     <%= link_to "SIGN OUT", session_path(session[:current_user]), :method => :delete, class: 'nav-link' %>
 </div>
