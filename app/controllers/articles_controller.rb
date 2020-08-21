@@ -31,7 +31,10 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         @article.categories << Category.find(article_params[:category_id])
-        format.html { redirect_to category_path(article_params[:category_id]), notice: 'Article was successfully created.' }
+        format.html do
+          redirect_to category_path(article_params[:category_id]),
+                      notice: 'Article was successfully created.'
+        end
       else
         format.html { render :new }
       end
@@ -45,7 +48,10 @@ class ArticlesController < ApplicationController
       if @article.update(article_params)
         @article.categories.destroy_all
         @article.categories << Category.find(article_params[:category_id])
-        format.html { redirect_to category_path(article_params[:category_id]), notice: 'Article was successfully updated.' }
+        format.html do
+          redirect_to category_path(article_params[:category_id]),
+                      notice: 'Article was successfully updated.'
+        end
       else
         format.html { render :edit }
       end

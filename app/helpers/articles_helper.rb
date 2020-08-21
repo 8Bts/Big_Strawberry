@@ -29,5 +29,5 @@ module ArticlesHelper
 
   def delete_btn(article)
     render 'articles/delete_button', article: article if article.author_id == session[:current_user]
-  end  
+  end
 end

@@ -7,7 +7,8 @@ module VotesHelper
     if vote
       link_to 'Take Vote', vote_path(vote.id), method: 'delete', class: 'btn btn-warning btn-small'
     else
-      link_to 'Vote', votes_path(user, votes: { user_id: user.id, article_id: article.id }), method: 'post', class: 'btn btn-primary btn-small'
+      link_to 'Vote', votes_path(user, votes: { user_id: user.id, article_id: article.id }),
+              method: 'post', class: 'btn btn-primary btn-small'
     end
   end
 
