@@ -12,13 +12,12 @@ module IntegrationTestHelpers
   end
 
   def create_article(username)
-    File.open
     do_login(username)
     click_button('Add New Recipe')
-
+    
     fill_in('article_title', with: 'Salad')
     fill_in('article_text', with: 'It is very healthy')
-    attach_file('Image', './app/assets/images/test.png')
+    attach_file('Image', Down.download('https://res.cloudinary.com/strawberry-cloud/image/upload/v1597406835/sample.jpg'))
     click_button('Publish')
   end
 

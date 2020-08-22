@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def check_notice(notice)
-    render '/layouts/notice', notice if notice    
+    render '/layouts/notice', msg: notice if notice
   end
 
   def no_category_msg
