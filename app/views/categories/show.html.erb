@@ -4,7 +4,7 @@
   
   <% _offset = 0 %>
               
-  <% while _offset < @articles.size %>
+  <% while _offset < @articles.count %>
 
     <% @articles.includes(:votes).order(id: 'DESC').limit(2).offset(_offset).find_each do |article| %>
       
