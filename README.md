@@ -36,10 +36,11 @@ To get a copy clone this repo to your local environment:
 `git clone https://github.com/8Bts/Big_Strawberry'
 
 ## Prerequisites
-In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
-Ruby works better on the linux OS but you can use other systems using bridging tools.
+- In order to make the program work, you need to have ruby interpreter installed in your system. You can get the latest version of ruby from [official website](https://www.ruby-lang.org/en/downloads/).
+Ruby works better on the Linux OS but you can use other systems using bridging tools.
 
-
+- This application uses [Cloudinary](https://cloudinary.com) service to store it's images. So you need to have a Cloudinary account and you need to connect your app to it. Check [Setup](#Setup) to see how to do it.
+  
 ## Setup
 
 Instal gems with:
@@ -51,20 +52,35 @@ bundle install
 Setup database with:
 
 ```
-   rails db:migrate
+rails db:migrate
+rails db:seed
+```
+
+Connect with Cloudinary:
+
+
+1. run `bundle exec figaro install` command and you will get `config/application.yml` file which is automatically added to your .gitignore list.
+
+2. Open that file and add your Cloudinary credentials there.
+  (You can get your credentials from [Cloudinary Dashboard](https://cloudinary.com/console/))
+
+Example:
+
+```
+# config/application.yml
+
+cloud_name: "my_cloud"
+api_key: "7381a978f7dd7f9a1117"
+api_secret: "abdc3b896a0ffb85d373"
 ```
 
 
 
 ## Usage
 
-Start server with:
+1. Start server with: `rails server`
 
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
+2. Open `http://localhost:3000/` in your browser.
 
 
 ## Tesing

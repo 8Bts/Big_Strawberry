@@ -89,6 +89,8 @@ GEM
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    down (5.1.1)
+      addressable (~> 2.5)
     erubi (1.9.0)
     ffi (1.13.1)
     figaro (1.2.0)
@@ -266,6 +268,7 @@ DEPENDENCIES
   carrierwave
   cloudinary
   database_cleaner
+  down
   figaro
   hirb
   jbuilder (~> 2.7)

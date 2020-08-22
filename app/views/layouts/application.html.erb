@@ -26,6 +26,7 @@
         </div>
   
         <div class="nav-middle">
+          <%= no_category_msg %>
           <% Category.all.each do |category| %>
             <%= link_to category.name, category_path(category.id), class: 'font-red-rose nav-middle-link' %>
           <% end %>
