@@ -24,6 +24,9 @@ Gems:
 Design:
 - Nelson Sakwa's LifeStyle Articles design
 
+## Live Version
+
+[Heroku server](https://warm-cliffs-17365.herokuapp.com/)
 
 ## Screenshot
 ![screenshot1](app/assets/images/screenshot.png)

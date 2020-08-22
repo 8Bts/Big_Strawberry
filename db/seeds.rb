@@ -1,4 +1,3 @@
-
 tom = User.create(name: 'Tom')
 
 img = Down.download('https://unsplash.com/photos/M0lUxgLnlfk/download?force=true&w=1920')
