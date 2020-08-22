@@ -1,12 +1,12 @@
 <%= check_notice(notice) %>
 
 <div class="user-show-page font-chivo bg-light py-5">
-  <ul>
+  <ul class="list-group ml-5">
   <h2 class="text-black-50">My Recipies</h2>
   <% if @user.articles.exists?%>
     <% @user.articles.find_each do |article| %>
   
-    <li>
+    <li class="list-group-item">
       <div class="user-art-cont mb-3 row">
         <div class="user-art-left col-2" style="background: url(<%= article.image %>) center / cover"></div>
         <div class="user-art-right col-10">
