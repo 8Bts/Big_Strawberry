@@ -1,0 +1,63 @@
+@import 'main.scss';
+
+.main-grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 55vh 35vh;
+}
+
+.featured {
+  position: relative;
+  grid-column: span 5;
+}
+
+.featured-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.featured-title {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  color: $primary;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.category {
+  position: relative;
+}
+
+.category-link {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8939950980392157) 0%, rgba(255, 255, 255, 0.011642156862745057) 100%);
+  transition: opacity 0.5s;
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.category-name {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  z-index: 3;
+  font-weight: bold;
+  border-bottom: 2px solid yellow;
+  line-height: 1.3;
+}
+
+.category-last-article {
+  font-weight: bold;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  z-index: 3;
+}

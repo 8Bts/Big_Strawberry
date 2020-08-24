@@ -1,0 +1,18 @@
+<div class="flex-center mt-5 form-group">
+
+  <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+      <div id="error_explanation">
+  
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li class="text-danger"><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <%= f.label :name, 'Username', class: 'text-white'%>
+  <%= f.text_field :name, class: 'form-control'%>
+  <button type="submit" class="btn bg-success btn-block mt-2">Sign Up</button>
+  <% end %>
+</div>

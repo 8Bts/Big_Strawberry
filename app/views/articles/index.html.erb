@@ -1,0 +1,20 @@
+<%= check_notice(flash[:success]) %>
+  
+<div class="main-grid">
+
+  <div class="featured" style= "background: #ffffff url(<%= featured_img %>) no-repeat center center/cover" >
+    <a href=<%= articles_path(featured_id) %> class="featured-link"></a>
+    <span class="featured-title font-chivo"><%= featured_title %></span>
+  </div>
+
+  
+  <% Category.includes(:articles).all.order(priority: 'DESC').each do |category| %>
+    <% img_url = category_last_img(category) %>
+    <div class="category" style="background: #ffffff url(<%=img_url%>) no-repeat center / cover">
+      <a href=<%= category_link(category) %> class="category-link"></a>
+      <span class="category-name font-chivo text-white"><%= category.name %></span>
+      <a class="category-last-article font-chivo text-white"><%= category_last_title(category) %></a>
+    </div>
+  <% end %>
+
+</div>

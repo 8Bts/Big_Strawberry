@@ -1,0 +1,26 @@
+<%= check_notice(notice) %>
+
+<div class="user-show-page font-chivo bg-light py-5">
+  <ul class="list-group ml-5">
+  <h2 class="text-black-50">My Recipies</h2>
+  <% if @user.articles.exists?%>
+    <% @user.articles.find_each do |article| %>
+  
+    <li class="list-group-item">
+      <div class="user-art-cont mb-3 row">
+        <div class="user-art-left col-2" style="background: url(<%= article.image %>) center / cover"></div>
+        <div class="user-art-right col-10">
+          <h3 class="user-art-title d-inline-block"> <%= article.title %> </h3>
+          <%= edit_btn(article) %>
+          <%= delete_btn(article) %>
+          <p class="user-art"> <%= article.text %> </p>   
+        </div>
+      </div>
+    </li>
+  
+    <% end %>
+  <% else %>
+    <p class='user-no-recipies'>You don't have any recipies so far</p>
+  <% end %>
+  </ul>
+</div>

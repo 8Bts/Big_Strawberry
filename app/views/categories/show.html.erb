@@ -1,0 +1,53 @@
+<%= check_notice(notice) %>
+
+<div class="category-container font-chivo">
+  
+  <% _offset = 0 %>
+              
+  <% while _offset < @articles.count %>
+
+    <% @articles.includes(:votes).order(id: 'DESC').limit(2).offset(_offset).find_each do |article| %>
+      
+      <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+      
+      <div class="cat-article-cont">
+        <h2 class="cat-name text-orange mr-5"><%= @category.name %></h2>
+        <br>
+        <h3 class="cat-article-name d-inline-block"><%= article.title %></h3>
+        <p class="cat-article-text"><%= article.text %></p>
+        <span><%= votes_text(article.votes.count) %></span>
+        <%= vote_btn(article) %>
+        <span class="article-actions">
+          <%= edit_btn(article) %>
+          <%= delete_btn(article) %>
+        </span>
+      </div>
+
+      <% _offset += 1 %>
+
+    <% end %>
+
+    <% @articles.order(id: 'DESC').limit(2).offset(_offset).find_each do |article| %>
+      <% break if _offset >= @articles.size %>
+      <div class="cat-article-cont ">
+        <h2 class="cat-name text-orange mr-5"><%= @category.name %></h2>
+        <br>
+        <h3 class="cat-article-name d-inline-block"><%= article.title %></h3>
+        
+        <p class="cat-article-text"><%= article.text %></p>
+        <span><%= votes_text(article.votes.count) %></span>
+        <%= vote_btn(article) %>
+        <span class="article-actions">
+          <%= edit_btn(article) %>
+          <%= delete_btn(article) %>
+        </span>
+      </div>
+
+      <div class="cat-article-img" style="background: url(<%= article.image %>) no-repeat center / cover"></div>
+      
+      <% _offset += 1 %>
+
+    <% end %>
+
+  <% end %>
+</div>
