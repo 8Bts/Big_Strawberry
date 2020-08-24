@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Big Strawberry</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/e2597287a1.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <nav class="navbar navbar-expand navbar-light bg-white d-flex justify-content-between">
+        <div class="logo-nav">
+        	<a href= <%= root_path %> class="nav-link">
+            <span class="logo-text text-orange">
+            BigStrawberry
+            </span>
+          </a>
+        </div>
+  
+        <div class="nav-middle">
+          <%= no_category_msg %>
+          <% Category.all.each do |category| %>
+            <%= link_to category.name, category_path(category.id), class: 'font-red-rose nav-middle-link' %>
+          <% end %>
+        </div>
+        
+        <div class="navbar-nav d-flex justify-content-end">
+          <a class="nav-item nav-link active" href="#"> <span class="sr-only">(current)</span></a>
+          <%= auth_links %>
+        </div>
+        
+      </nav>
+  
+      <main class="bg-second">
+        <div class="main-container">
+          <%= yield %>
+        </div>
+      </main>
+  
+      <footer>
+  
+        <div class="footer d-flex justify-content-between font-lato">
+          <div class="logo-nav">
+        	  <a href= <%= root_path %> class="nav-link">
+              <span class="logo-text text-orange">
+              BigStrawberry
+              </span>
+            </a>
+          </div>
+  
+          <div class="footer-mid py-3 font-small">
+            <a href="#" class="text-orange">Privacy Policy  Terms & Conditions</a>
+            <a href="#" class="text-white">Copyright 2020, All Rights Reserved</a>
+          </div>
+  
+          <div class="footer-end font-small p-3">
+            <span class="text-white">Connect with us:</span>
+            <a href="#">
+              <i class="fab fa-twitter fa-lg text-orange"></i>
+            </a>
+            <a href="#">
+            <i class="fab fa-instagram fa-lg text-orange"></i>          
+            </a>
+            <a href="#">
+            <i class="fab fa-facebook fa-lg text-orange"></i>
+            </a>
+          </div>
+        </div>
+  
+      </footer>
+    </div>
+  </body>
+</html>
